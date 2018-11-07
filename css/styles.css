@@ -275,7 +275,7 @@ nav h1 a {
   color: #666;
 }
 
-@media only screen and (max-width: 480px) {
+/*@media only screen and (max-width: 480px) {
 	.inside #map-container {
 	  height: 100%;
 	  width: 100%;
@@ -284,4 +284,4 @@ nav h1 a {
 	#restaurants-list {
 		width: 100%;
 	}
-}
+}*/
