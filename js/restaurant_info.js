@@ -159,6 +159,7 @@ createReviewHTML = (review) => {
 
     const rating = document.createElement('p');
     rating.innerHTML = `Rating: ${review.rating}`;
+    // rating.style.backgroundColor = "orange";
     li.appendChild(rating);
 
     const comments = document.createElement('p');
