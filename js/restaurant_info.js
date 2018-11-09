@@ -151,15 +151,24 @@ createReviewHTML = (review) => {
     const li = document.createElement('li');
     const name = document.createElement('p');
     name.innerHTML = review.name;
+    name.style.display = "inline";
     li.appendChild(name);
 
     const date = document.createElement('p');
     date.innerHTML = review.date;
+    date.style.display = "inline";
+    date.style.float = "right";
     li.appendChild(date);
 
     const rating = document.createElement('p');
     rating.innerHTML = `Rating: ${review.rating}`;
-    // rating.style.backgroundColor = "orange";
+    rating.style.backgroundColor = "orange";
+    rating.style.fontWeight = "bold";
+    rating.style.margin = "15px 0 5";
+    rating.style.padding = "4px 9px 4px";
+    rating.style.borderRadius = "5px";
+    rating.style.color = "#fff";
+    rating.style.display = "table";
     li.appendChild(rating);
 
     const comments = document.createElement('p');
