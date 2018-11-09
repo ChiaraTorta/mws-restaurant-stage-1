@@ -28,9 +28,9 @@ const cacheFiles = [
 /*
  ** Listen for installation event
  */
-self.addEventListener('install', function(e) {
+self.addEventListener('install', function(event) {
     // add cacheFiles to the cache when installation is completed
-    e.waitUntil(
+    event.waitUntil(
         // caches.open(cacheName).then(cache =>
         //     return {
         //         cacheaddAll(cacheFiles);
@@ -39,4 +39,36 @@ self.addEventListener('install', function(e) {
         caches.open(cacheName).then(function(cache) {
             return cache.addAll(cacheFiles);
         }))
+});
+
+/*
+ ** Listen for fetch event
+ */
+
+self.addEventListener('fetch', function(event) {
+    // prevent default fetch event
+    event.respondWith(
+        // does the requested URL already exist in the cached files?
+        caches.match(event.request).then(function(response) {
+            //...yes --> use cache file
+            if (response) {
+                return response;
+            }
+            //...no --> fetch request and add it to the cache
+            else {
+                return fetch(event.request)
+                    // get response from fetch
+                    .then(function(response) {
+                        caches.open(cacheName).then(function(cache) {
+                            // put response into cache
+                            cache.put(event.request, response);
+                        })
+                        return response;
+                    })
+                    .catch(function(err) {
+                        console.error(error);
+                    });
+            }
+        })
+    )
 });
