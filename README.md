@@ -16,8 +16,7 @@ This project is part of the Udacity Front-End Web Developer Nanodegree Program.
 
 The [starter project](https://github.com/udacity/mws-restaurant-stage-1) had a lot of issues. It was barely usable on a desktop browser, much less a mobile device. It also didn’t include any standard accessibility features, and it didn’t work offline at all. My job was to update the code to resolve these issues while still maintaining the included functionality.
 
-The Website uses a map to shows the restaurant positions. For that I needed a token 
-For that I could choose whether to use the Google or the Mapbox API. I chose the latter because is free to use, and does not require any payment information. 
+The Website uses a map to shows the restaurant positions. For that I could choose whether to use the Google or the Mapbox API. I chose the latter because is free to use, and does not require any payment information. 
 
 ## Preview
 
