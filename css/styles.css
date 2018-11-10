@@ -154,9 +154,12 @@ nav h1 a {
   list-style: outside none none;
   margin: 0;
   padding: 30px 15px 60px;
-  flex-direction: column;
+  /*flex-direction: column;*/
   display: flex;
-  align-items: center;
+  /*align-items: center;*/
+  flex-wrap: wrap;
+  justify-content: center;
+
 }
 
 #restaurants-list li {
@@ -334,7 +337,8 @@ nav h1 a {
 
 @media only screen and (min-width: 480px) {
   #restaurants-list li {
-    max-width: 70%;
+    /*max-width: 70%;*/
+    max-width: 30%;
   }
 }
 
