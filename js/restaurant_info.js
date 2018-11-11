@@ -89,7 +89,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
     const image = document.getElementById('restaurant-img');
     image.className = 'restaurant-img'
     image.src = DBHelper.imageUrlForRestaurant(restaurant);
-    image.alt = restaurant.name;
+    image.alt = `Photo of ${restaurant.name} restaurant`;
 
     const cuisine = document.getElementById('restaurant-cuisine');
     cuisine.innerHTML = restaurant.cuisine_type;
@@ -129,7 +129,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
     const container = document.getElementById('reviews-container');
     const title = document.createElement('h2');
     title.innerHTML = 'Reviews';
-    title.tabindex = "4";
+    title.tabindex = "0";
     container.appendChild(title);
 
     if (!reviews) {
